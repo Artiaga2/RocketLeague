@@ -1,13 +1,12 @@
 package com.artiaga.controller;
 
-import com.artiaga.Modelo.Chasis;
-import com.artiaga.Modelo.Plataforma;
-import com.artiaga.Modelo.Rareza;
-import com.artiaga.Modelo.Rueda;
+import com.artiaga.Modelo.*;
 
 public class RocketLeagueApp {
 
     //Constructor
+
+
     public RocketLeagueApp() {
     }
 
@@ -86,28 +85,332 @@ public class RocketLeagueApp {
         new Rueda("CRISTIANO", Rareza.PREMIUM, Plataforma.TODAS);
         new Rueda("SPINNER", Rareza.PREMIUM, Plataforma.TODAS);
         new Rueda("ZYPPY", Rareza.PREMIUM, Plataforma.TODAS);
-        new Rueda("", Rareza.PREMIUM, Plataforma.TODAS);
-        new Rueda("", Rareza.PREMIUM, Plataforma.TODAS);
-        new Rueda("", Rareza.PREMIUM, Plataforma.TODAS);
-        new Rueda("", Rareza.PREMIUM, Plataforma.TODAS);
-        new Rueda("", Rareza.PREMIUM, Plataforma.TODAS);
-        new Rueda("", Rareza.PREMIUM, Plataforma.TODAS);
-        new Rueda("", Rareza.PREMIUM, Plataforma.TODAS);
-        new Rueda("", Rareza.PREMIUM, Plataforma.TODAS);
-        new Rueda("", Rareza.PREMIUM, Plataforma.TODAS);
-        new Rueda("", Rareza.PREMIUM, Plataforma.TODAS);
-        new Rueda("", Rareza.PREMIUM, Plataforma.TODAS);
-        new Rueda("", Rareza.PREMIUM, Plataforma.TODAS);
-        new Rueda("", Rareza.PREMIUM, Plataforma.TODAS);
-        new Rueda("", Rareza.PREMIUM, Plataforma.TODAS);
-        new Rueda("", Rareza.PREMIUM, Plataforma.TODAS);
-
-
-
-
-
-
+        new Rueda("Scarab", Rareza.PREMIUM, Plataforma.TODAS);
+        new Rueda("Carriage", Rareza.LIMITADO, Plataforma.TODAS);
+        new Rueda("Grog", Rareza.PREMIUM, Plataforma.TODAS);
+        new Rueda("Ripper", Rareza.PREMIUM, Plataforma.TODAS);
+        new Rueda("Batmobile", Rareza.PREMIUM, Plataforma.TODAS);
+        new Rueda("DeLorean Time Machine", Rareza.PREMIUM, Plataforma.TODAS);
+        new Rueda("Aftershock", Rareza.PREMIUM, Plataforma.TODAS);
+        new Rueda("Marauder", Rareza.PREMIUM, Plataforma.TODAS);
+        new Rueda("Masamune", Rareza.PREMIUM, Plataforma.TODAS);
+        new Rueda("Esper", Rareza.PREMIUM, Plataforma.TODAS);
+        new Rueda("Chakram", Rareza.MUYRARO, Plataforma.TODAS);
+        new Rueda("Photon", Rareza.EXOTICO, Plataforma.TODAS);
+        new Rueda("Looper", Rareza.EXOTICO, Plataforma.TODAS);
+        new Rueda("Lobo", Rareza.EXOTICO, Plataforma.TODAS);
+        new Rueda("Voltaic", Rareza.EXOTICO, Plataforma.TODAS);
+        new Rueda("Triton", Rareza.PREMIUM, Plataforma.TODAS);
+        new Rueda("Rhino 2", Rareza.POCOCOMUN, Plataforma.TODAS);
+        new Rueda("Troika", Rareza.MUYRARO, Plataforma.TODAS);
+        new Rueda("Discotheque", Rareza.EXOTICO, Plataforma.TODAS);
+        new Rueda("Pulsus", Rareza.EXOTICO, Plataforma.TODAS);
+        new Rueda("Asterias", Rareza.RARO, Plataforma.TODAS);
+        new Rueda("Zeta", Rareza.RARO, Plataforma.TODAS);
+        new Rueda("Proteus", Rareza.PREMIUM, Plataforma.TODAS);
+        new Rueda("Vulcan", Rareza.PREMIUM, Plataforma.TODAS);
+        new Rueda("Spiralis", Rareza.MUYRARO, Plataforma.TODAS);
+        new Rueda("FSL", Rareza.IMPORT, Plataforma.TODAS);
+        new Rueda("Zomba", Rareza.EXOTICO, Plataforma.TODAS);
+        new Rueda("ARA-51", Rareza.EXOTICO, Plataforma.TODAS);
+        new Rueda("WW5SP", Rareza.PREMIUM, Plataforma.TODAS);
+        new Rueda("OH5", Rareza.PREMIUM, Plataforma.TODAS);
+        new Rueda("Kalos", Rareza.EXOTICO, Plataforma.TODAS);
+        new Rueda("Season 3 - Prospect", Rareza.LIMITADO, Plataforma.TODAS);
+        new Rueda("Season 3 - Challenger", Rareza.LIMITADO, Plataforma.TODAS);
+        new Rueda("Season 3 - Star", Rareza.LIMITADO, Plataforma.TODAS);
+        new Rueda("Season 3 - Champion", Rareza.LIMITADO, Plataforma.TODAS);
+        new Rueda("Septem", Rareza.MUYRARO, Plataforma.TODAS);
+        new Rueda("Roulette", Rareza.EXOTICO, Plataforma.TODAS);
+        new Rueda("Ice Charger", Rareza.PREMIUM, Plataforma.TODAS);
+        new Rueda("Fireplug", Rareza.MUYRARO, Plataforma.TODAS);
+        new Rueda("Triplex", Rareza.IMPORT, Plataforma.TODAS);
+        new Rueda("Draco", Rareza.EXOTICO, Plataforma.TODAS);
+        new Rueda("K2", Rareza.EXOTICO, Plataforma.TODAS);
+        
 
     }
+    
+    
+    private void loadBoosts (){
+
+        new Nitro("Confetti", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Datastream", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Flamethrower", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Flamethrower Blue", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Flamethrower Green", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Flamethrower Purple", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Flamethrower Red", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Flowers", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Gold Rush (Alpha Reward)", Rareza.LIMITADO, Plataforma.PC);
+        new Nitro("Grass", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Hydro", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Ion Blue", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Ion Green", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Ion Pink", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Ion Purple", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Ion Red", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Ion Yellow", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Money", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Plasma", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Rainbow", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Sacred", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Slime", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Snowflakes", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Sparkles", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Standard Blue", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Standard Pink", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Standard Purple", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Standard Red", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Standard Yellow", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Thermal", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Thermal Blue", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Thermal Green", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Thermal Pink", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Thermal Purple", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Thermal Yellow", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Bubbles", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Flamethrower Pink", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Nitrous", Rareza.PREMIUM, Plataforma.TODAS);
+        new Nitro("Burnout", Rareza.PREMIUM, Plataforma.TODAS);
+        new Nitro("Accelerato", Rareza.PREMIUM, Plataforma.TODAS);
+        new Nitro("Battle-Stars", Rareza.PREMIUM, Plataforma.TODAS);
+        new Nitro("Candy Corn", Rareza.LIMITADO, Plataforma.TODAS);
+        new Nitro("Nuts & Bolts", Rareza.PREMIUM, Plataforma.TODAS);
+        new Nitro("Sandstorm", Rareza.PREMIUM, Plataforma.TODAS);
+        new Nitro("Portal - Conversion Gel", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Portal - Propulsion Gel", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Portal - Repulsion Gel", Rareza.COMUN, Plataforma.TODAS);
+        new Nitro("Xmas", Rareza.LIMITADO, Plataforma.TODAS);
+        new Nitro("Batmobile", Rareza.PREMIUM, Plataforma.TODAS);
+        new Nitro("OutaTime", Rareza.PREMIUM, Plataforma.TODAS);
+        new Nitro("Season 2 - Challenger", Rareza.LIMITADO, Plataforma.TODAS);
+        new Nitro("Season 2 - Prospect", Rareza.LIMITADO, Plataforma.TODAS);
+        new Nitro("Season 2 - Star", Rareza.LIMITADO, Plataforma.TODAS);
+        new Nitro("Season 2 - Champion", Rareza.LIMITADO, Plataforma.TODAS);
+        new Nitro("Toon Smoke", Rareza.SUPERARO, Plataforma.TODAS);
+        new Nitro("Frostbite", Rareza.SUPERARO, Plataforma.TODAS);
+        new Nitro("Hearts", Rareza.SUPERARO, Plataforma.TODAS);
+        new Nitro("Lightning", Rareza.SUPERARO, Plataforma.TODAS);
+        new Nitro("Polygonal", Rareza.MUYRARO, Plataforma.TODAS);
+        new Nitro("Pixel Fire", Rareza.IMPORT, Plataforma.TODAS);
+        new Nitro("Trinity", Rareza.IMPORT, Plataforma.TODAS);
+        new Nitro("Dark Matter", Rareza.IMPORT, Plataforma.TODAS);
+        new Nitro("Hypernova", Rareza.IMPORT, Plataforma.TODAS);
+        new Nitro("Ink", Rareza.MUYRARO, Plataforma.TODAS);
+        new Nitro("Treasure", Rareza.MUYRARO, Plataforma.TODAS);
+        new Nitro("Netherworld", Rareza.LIMITADO, Plataforma.TODAS);
+        new Nitro("Proton", Rareza.IMPORT, Plataforma.TODAS);
+        new Nitro("Lightning Yellow", Rareza.MUYRARO, Plataforma.TODAS);
+        new Nitro("Xenosplash", Rareza.MUYRARO, Plataforma.TODAS);
+        new Nitro("Tachyon", Rareza.IMPORT, Plataforma.TODAS);
+        new Nitro("Hexphase", Rareza.MUYRARO, Plataforma.TODAS);
+        new Nitro("Neo-Thermal", Rareza.IMPORT, Plataforma.TODAS);
+    }
+
+   private void loadAntenas (){
+
+       new Antena("8-Ball", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Blacklight: Retribution", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Blue Chequered Flag", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Camo Flag", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Chroma", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Dollar Sign", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Edge of Space", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Excalibur", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Fenix Rage", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Gingerbread Man", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Gold Nugget (Beta Reward)", Rareza.LIMITADO, Plataforma.TODAS);
+       new Antena("Heart", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Horseshoe", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Jolly Roger", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Lightning Bolt", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Loki", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Peace", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Safety Flag", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Saturn", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Shadowgate", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Skull", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Smiley", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Snowman", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Soccer Ball", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Star", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Strike Vector EX", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Team Fat", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Tennis Ball", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Twitch", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("UFO", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Unreal", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Warframe", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Country Flags", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Blacklight", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Sweet Tooth", Rareza.COMUN, Plataforma.PLAY);
+       new Antena("White Flag", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Disconnect", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Chivalry - Agatha Knights", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Chivalry - Mason Order", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Retro Ball - Urban", Rareza.PREMIUM, Plataforma.TODAS);
+       new Antena("Retro Ball - Utopia", Rareza.PREMIUM, Plataforma.TODAS);
+       new Antena("Calavera", Rareza.LIMITADO, Plataforma.TODAS);
+       new Antena("Dave's Bread", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Fuzzy Brute", Rareza.LIMITADO, Plataforma.TODAS);
+       new Antena("Fuzzy Vamp", Rareza.LIMITADO, Plataforma.TODAS);
+       new Antena("Reddit Snoo", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("The Game Awards - Statue", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Nosgoth - Human", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Nosgoth - Vampire", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Nosgoth", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Oddworld - Necrum", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Unreal Tournament", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Bomb Pole", Rareza.PREMIUM, Plataforma.TODAS);
+       new Antena("Radioactive", Rareza.PREMIUM, Plataforma.TODAS);
+       new Antena("Retro Ball - Wasteland", Rareza.PREMIUM, Plataforma.TODAS);
+       new Antena("RL Garage", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Candy Cane", Rareza.LIMITADO, Plataforma.TODAS);
+       new Antena("Holiday Gift", Rareza.LIMITADO, Plataforma.TODAS);
+       new Antena("Portal - Companion Cube", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Portal - PotatOS", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Rainbow Flag", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("Waffle", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("Rubber Duckie", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("Rocket", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("Piñata", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("Parrot", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("Moai", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("deadmau5", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Hula Girl", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("Genie Lamp", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("Foam Finger", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("Venus Flytrap", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("Sunflower", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("Rose", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("Donut", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("Unreal Tournament - Flak Shell", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Balloon Dog", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("Disco Ball", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("Cupcake", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("Chick Magnet", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("Candle", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("Alien", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("Batman", Rareza.PREMIUM, Plataforma.TODAS);
+       new Antena("Superman", Rareza.PREMIUM, Plataforma.TODAS);
+       new Antena("Wonder Woman", Rareza.PREMIUM, Plataforma.TODAS);
+       new Antena("9GAG", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("DIV", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Wakeup Ship", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Discord", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("PAX", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Penny Arcade", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("ScrewAttack!", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Harpoon", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("Seastar", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("Trident", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("Fuzzy Skull", Rareza.LIMITADO, Plataforma.TODAS);
+       new Antena("Nutcracker", Rareza.LIMITADO, Plataforma.TODAS);
+       new Antena("Satellite", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Antena("NoClip", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("NZXT", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("SDMN FC", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Vikkstar", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("RLCS", Rareza.COMUN, Plataforma.TODAS);
+       new Antena("Easter Egg", Rareza.LIMITADO, Plataforma.TODAS);
+
+
+   }
+
+
+   private void loadSombreros (){
+
+       new Sombrero("Bobby Helmet", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Brünnehilde", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Cherry Top", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Devil Horns", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Fez", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Fire Helmet", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Gold Cap (Alpha Reward)", Rareza.LIMITADO, Plataforma.PC);
+       new Sombrero("Halo", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Hard Hat", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Mariachi Hat", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Pirate's Hat", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Pizza Topper", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Propellerhead", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Royal Crown", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Sombrero", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Taxi Topper", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Top Hat", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Witch's Hat", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Wizard Hat", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Cavalier", Rareza.PREMIUM, Plataforma.TODAS);
+       new Sombrero("Locomotive", Rareza.PREMIUM, Plataforma.TODAS);
+       new Sombrero("Pixelated Shades", Rareza.PREMIUM, Plataforma.TODAS);
+       new Sombrero("Shark Fin", Rareza.PREMIUM, Plataforma.TODAS);
+       new Sombrero("Pumpkin", Rareza.LIMITADO, Plataforma.TODAS);
+       new Sombrero("Boombox", Rareza.PREMIUM, Plataforma.TODAS);
+       new Sombrero("Cow Skull", Rareza.PREMIUM, Plataforma.TODAS);
+       new Sombrero("Mohawk", Rareza.PREMIUM, Plataforma.TODAS);
+       new Sombrero("Portal - Cake", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Blitzen", Rareza.LIMITADO, Plataforma.TODAS);
+       new Sombrero("Christmas Tree", Rareza.LIMITADO, Plataforma.TODAS);
+       new Sombrero("Sad Sapling", Rareza.LIMITADO, Plataforma.TODAS);
+       new Sombrero("Santa", Rareza.LIMITADO, Plataforma.TODAS);
+       new Sombrero("Unicorn", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Traffic Cone", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Tiara", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Shuriken", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Rhino Horns", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Mouse Trap", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Rasta", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Police Hat", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Plunger", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Paper Boat", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Graduation Cap", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Bowler", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Fruit Hat", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Brodie Helmet", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Homburg", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Derby", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Deerstalker", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("deadmau5", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Cockroach", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Chef's Hat", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Chainsaw", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Captain's Hat", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Work Boot", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Birthday Cake", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Biker Cap", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Beret", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Antlers", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Season 1 - Bronze", Rareza.LIMITADO, Plataforma.TODAS);
+       new Sombrero("Season 1 - Silver", Rareza.LIMITADO, Plataforma.TODAS);
+       new Sombrero("Season 1 - Gold", Rareza.LIMITADO, Plataforma.TODAS);
+       new Sombrero("Season 1 - Platinum", Rareza.LIMITADO, Plataforma.TODAS);
+       new Sombrero("ROBO-Visor", Rareza.RARO, Plataforma.TODAS);
+       new Sombrero("Wildcat Ears", Rareza.RARO, Plataforma.TODAS);
+       new Sombrero("Drink Helmet", Rareza.RARO, Plataforma.TODAS);
+       new Sombrero("Pigeon", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Little Bow", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Cattleman", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Pork Pie", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Ivy Cap", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Light Bulb", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Party Hat", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Trucker Hat", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Visor", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("White Hat", Rareza.LIMITADO, Plataforma.TODAS);
+       new Sombrero("Baseball Cap [F]", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Baseball Cap [B]", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Day Of The Tentacle", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Foam Hat", Rareza.POCOCOMUN, Plataforma.TODAS);
+       new Sombrero("Clamshell", Rareza.RARO, Plataforma.TODAS);
+       new Sombrero("Bone King", Rareza.LIMITADO, Plataforma.TODAS);
+       new Sombrero("Ghost", Rareza.LIMITADO, Plataforma.TODAS);
+       new Sombrero("Helper Elf", Rareza.LIMITADO, Plataforma.TODAS);
+       new Sombrero("New Year's 2017", Rareza.LIMITADO, Plataforma.TODAS);
+       new Sombrero("SharkBite", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Hot Wheels", Rareza.COMUN, Plataforma.TODAS);
+       new Sombrero("Bunny Ears", Rareza.LIMITADO, Plataforma.TODAS);
+       new Sombrero("Easter Basket", Rareza.LIMITADO, Plataforma.TODAS);
+       
+   }
 
 }

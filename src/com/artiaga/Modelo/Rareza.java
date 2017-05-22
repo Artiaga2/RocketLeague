@@ -9,7 +9,9 @@ public enum Rareza {
     MUYRARO("Muy Raro"),
     IMPORT("Importado"),
     EXOTICO("Exotico"),
-    BLACKMARKET("Black Market");
+    BLACKMARKET("Black Market"),
+    POCOCOMUN("Poco Comun"),
+    SUPERARO("Super Raro");
 
 
     private final String rareza;
