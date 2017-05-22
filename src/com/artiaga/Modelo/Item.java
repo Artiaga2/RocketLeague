@@ -47,4 +47,13 @@ public class Item {
     public void setPlataforma(Plataforma plataforma) {
         this.plataforma = plataforma;
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "nombre='" + nombre + '\'' +
+                ", rareza=" + rareza +
+                ", plataforma=" + plataforma +
+                '}';
+    }
 }
