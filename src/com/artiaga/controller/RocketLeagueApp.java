@@ -13,8 +13,8 @@ public class RocketLeagueApp {
 
 
     public RocketLeagueApp() {
-        
-        
+        items = new ArrayList<>();
+
     }
 
 
@@ -24,25 +24,58 @@ public class RocketLeagueApp {
         while ((option = showMenu()) != 0) {
             switch (option) {
                 case 1:
-                   loadChasis();
-                   showItemList();
+                    loadChasis();
+                    showItemList();
                     break;
                 case 2:
-                   loadWhells();
+                    loadWhells();
+                    showItemList();
                     break;
                 case 3:
-                   loadBoosts();
+                    loadBoosts();
+                    showItemList();
                     break;
                 case 4:
                     loadAntenas();
+                    showItemList();
                     break;
 
                 case 5:
                     loadSombreros();
+                    showItemList();
                     break;
             }
         }
     }
+
+    public void addChasis(Chasis chasis) {
+        if( chasis != null){
+            items.add(chasis);
+        }
+    }
+
+//    private Item askItemInfo() {
+//        Scanner scanner = new Scanner(System.in);
+//        String nombre;
+//        Rareza rareza;
+//        Plataforma plataforma;
+//
+//        do {
+//            System.out.println("Nombre: ");
+//            nombre= scanner.nextLine().trim().replaceAll("\\s+", " ");
+//        } while (nombre.equals(""));
+//
+//        scanner.nextLine();
+//
+//        do {
+//            System.out.println("Rareza ");
+//            rareza = scanner.next().trim().replaceAll("\\s+", " ");
+//        } while (airline.equals(""));
+//
+//        do {
+//            System.out.println("Velocidad de crucero: ");
+//            speed = scanner.nextDouble();
+//        } while (speed < 0.0);
 
     private int showMenu() {
         Scanner scanner = new Scanner(System.in);
@@ -50,6 +83,7 @@ public class RocketLeagueApp {
 
         System.out.println("****************************");
         System.out.println("* 1 - Ver Chasis           *");
+        System.out.println("* 1 - Agregar Chasis       *");
         System.out.println("* 2 - Ver Ruedas           *");
         System.out.println("* 3 - Ver Nitros           *");
         System.out.println("* 4 - Ver Antenas          *");
@@ -78,7 +112,7 @@ public class RocketLeagueApp {
     private void loadChasis(){
 
 
-        items.add(new Chasis("OCTANE", Rareza.COMUN, Plataforma.PLAY));
+        items.add(new Chasis("OCTANE", Rareza.COMUN, Plataforma.TODAS));
         items.add(new Chasis("SWEET TOOTH", Rareza.COMUN, Plataforma.PLAY));
         items.add(new Chasis("BACKFIRE", Rareza.COMUN, Plataforma.TODAS));
         items.add(new Chasis("BREAKOUT", Rareza.COMUN, Plataforma.TODAS));

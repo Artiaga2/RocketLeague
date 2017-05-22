@@ -12,6 +12,8 @@ public class Item {
 
     //Constructor
 
+
+
     public Item(String nombre,
                 Rareza rareza,
                 Plataforma plataforma) {
