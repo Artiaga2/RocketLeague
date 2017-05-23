@@ -9,7 +9,6 @@ public enum Rareza {
     MUYRARO("Muy Raro"),
     IMPORT("Importado"),
     EXOTICO("Exotico"),
-    BLACKMARKET("Black Market"),
     POCOCOMUN("Poco Comun"),
     SUPERARO("Super Raro");
 

@@ -1,6 +1,7 @@
 package com.artiaga.controller;
 
 import com.artiaga.Modelo.*;
+import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -8,12 +9,22 @@ import java.util.Scanner;
 public class RocketLeagueApp {
 
    private ArrayList <Item> items;
+    private ArrayList <Chasis> chasisArrayList;
+    private ArrayList <Rueda> ruedas;
+    private ArrayList <Nitro> nitros;
+    private ArrayList <Antena> antenas;
+    private ArrayList <Sombrero> sombreros;
     
     //Constructor
 
 
     public RocketLeagueApp() {
         items = new ArrayList<>();
+        chasisArrayList = new ArrayList<>();
+        ruedas = new ArrayList<>();
+        nitros = new ArrayList<>();
+        antenas = new ArrayList<>();
+        sombreros = new ArrayList<>();
 
     }
 
@@ -44,38 +55,154 @@ public class RocketLeagueApp {
                     loadSombreros();
                     showItemList();
                     break;
+
+                case 6:
+                    addItem(askItemInfo());
             }
         }
     }
 
-    public void addChasis(Chasis chasis) {
-        if( chasis != null){
-            items.add(chasis);
+    public void addItem(Item item) {
+
+
+        if (item instanceof Chasis){
+            chasisArrayList.add((Chasis) item);
         }
+
+        else if (item instanceof Rueda){
+            ruedas.add((Rueda) item);
+        }
+
+        else if (item instanceof Antena){
+            antenas.add((Antena) item);
+        }
+
+        else if (item instanceof Nitro){
+            nitros.add((Nitro) item);
+        }
+
+        else if (item instanceof Sombrero){
+            sombreros.add((Sombrero) item);
+        }
+
     }
 
-//    private Item askItemInfo() {
-//        Scanner scanner = new Scanner(System.in);
-//        String nombre;
-//        Rareza rareza;
-//        Plataforma plataforma;
-//
-//        do {
-//            System.out.println("Nombre: ");
-//            nombre= scanner.nextLine().trim().replaceAll("\\s+", " ");
-//        } while (nombre.equals(""));
-//
-//        scanner.nextLine();
-//
-//        do {
-//            System.out.println("Rareza ");
-//            rareza = scanner.next().trim().replaceAll("\\s+", " ");
-//        } while (airline.equals(""));
-//
-//        do {
-//            System.out.println("Velocidad de crucero: ");
-//            speed = scanner.nextDouble();
-//        } while (speed < 0.0);
+
+
+
+    private Item askItemInfo() {
+        int option;
+        Scanner scanner = new Scanner(System.in);
+        String nombre;
+        Item tipo = new Item("",Rareza.COMUN, Plataforma.TODAS);
+        Plataforma plataforma = Plataforma.TODAS;
+        Rareza rareza = Rareza.COMUN;
+
+        do {
+            System.out.println("Nombre: ");
+            nombre = scanner.nextLine().trim().replaceAll("\\s+", " ");
+        } while (nombre.equals(""));
+
+
+        System.out.println("Elige un tipo");
+
+        switch (showTipo()){
+            case 1:
+                tipo = new Chasis(nombre, rareza,plataforma);
+                break;
+            case 2:
+                tipo = new Rueda(nombre, rareza,plataforma);
+                break;
+            case 3:
+                tipo = new Nitro(nombre, rareza,plataforma);
+                break;
+            case 4:
+                tipo = new Antena(nombre, rareza,plataforma);
+                break;
+            case 5:
+                tipo = new Sombrero(nombre, rareza,plataforma);
+                break;
+        }
+
+        System.out.println("Rareza ");
+        switch (showRareza()) {
+
+            case 1:
+                System.out.println("1 - Rareza Común");
+                rareza = Rareza.COMUN;
+                break;
+
+            case 2:
+                System.out.println("2 - Rareza  Premium");
+                rareza = Rareza.PREMIUM;
+                break;
+
+            case 3:
+                System.out.println("2 - Rareza  Limitado");
+                rareza = Rareza.LIMITADO;
+                break;
+
+            case 4:
+                System.out.println("3 - Rareza Raro");
+                rareza = Rareza.RARO;
+                break;
+
+            case 5:
+                System.out.println("4 - Rareza Muy Raro");
+                rareza = Rareza.MUYRARO;
+                break;
+
+            case 6:
+                System.out.println("5 - Rareza Importado");
+                rareza = Rareza.IMPORT;
+                break;
+
+            case 7:
+                System.out.println("6 - Rareza Exotico");
+                rareza = Rareza.EXOTICO;
+                break;
+
+            case 8:
+                System.out.println("7 - Rareza Poco común");
+                rareza = Rareza.POCOCOMUN;
+                break;
+
+            case 9:
+                System.out.println("8 - Super Raro");
+                rareza = Rareza.SUPERARO;
+                break;
+
+        }
+
+            System.out.println("Plataforma ");
+            switch (showPlataforma()) {
+
+                case 1:
+                    System.out.println("1 - Plataforma TODAS");
+                    plataforma = Plataforma.TODAS;
+
+                    break;
+
+                case 2:
+                    System.out.println("2 - Plataforma PC");
+                    plataforma = Plataforma.PC;
+                    break;
+
+                case 3:
+                    System.out.println("3 - Plataforma PLAY");
+                    plataforma = Plataforma.PLAY;
+                    break;
+
+                case 4:
+                    System.out.println("4 - Plataforma XBOX");
+                    plataforma = Plataforma.XBOX;
+                    break;
+            }
+
+
+       return tipo;
+        }
+
 
     private int showMenu() {
         Scanner scanner = new Scanner(System.in);
@@ -83,12 +210,73 @@ public class RocketLeagueApp {
 
         System.out.println("****************************");
         System.out.println("* 1 - Ver Chasis           *");
-        System.out.println("* 1 - Agregar Chasis       *");
         System.out.println("* 2 - Ver Ruedas           *");
         System.out.println("* 3 - Ver Nitros           *");
         System.out.println("* 4 - Ver Antenas          *");
         System.out.println("* 5 - Ver Sombreros        *");
+        System.out.println("* 6 - Agregar Item         *");
         System.out.println("* 0 - Salir                *");
+        System.out.println("****************************");
+        System.out.println("Opción: ");
+
+        option = scanner.nextInt();
+
+        return option;
+    }
+
+    private int showTipo(){
+
+        Scanner scanner = new Scanner(System.in);
+        int option;
+
+        System.out.println("****************************");
+        System.out.println("* 1 -  Chasis              *");
+        System.out.println("* 2 -  Rueda               *");
+        System.out.println("* 3 -  Nitro               *");
+        System.out.println("* 4 -  Antena              *");
+        System.out.println("* 5 -  Sombrero            *");
+        System.out.println("****************************");
+        System.out.println("Opción: ");
+
+        option = scanner.nextInt();
+
+        return option;
+    }
+
+    private int showRareza (){
+
+        Scanner scanner = new Scanner(System.in);
+        int option;
+
+        System.out.println("****************************");
+        System.out.println("* 1 - Comun                *");
+        System.out.println("* 2 - Premium              *");
+        System.out.println("* 3 - Limitado             *");
+        System.out.println("* 4 - Raro                 *");
+        System.out.println("* 5 - Muy Raro             *");
+        System.out.println("* 6 - Importado            *");
+        System.out.println("* 7 - Exotico              *");
+        System.out.println("* 8 - Poco comun           *");
+        System.out.println("* 9 - Super Raro           *");
+        System.out.println("****************************");
+        System.out.println("Opción: ");
+
+        option = scanner.nextInt();
+
+        return option;
+
+    }
+
+    private int showPlataforma (){
+
+        Scanner scanner = new Scanner(System.in);
+        int option;
+
+        System.out.println("****************************");
+        System.out.println("* 1 - TODAS                *");
+        System.out.println("* 2 - PC                   *");
+        System.out.println("* 3 - PLAY                 *");
+        System.out.println("* 4 - XBOX                 *");
         System.out.println("****************************");
         System.out.println("Opción: ");
 
