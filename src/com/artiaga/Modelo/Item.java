@@ -1,5 +1,7 @@
 package com.artiaga.Modelo;
 
+import com.artiaga.controller.RocketLeagueApp;
+
 /**
  * Created by artiaga on 6/3/17.
  */
@@ -52,8 +54,7 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item{" +
-                "nombre='" + nombre + '\'' +
+        return "nombre='" + nombre + '\'' +
                 ", rareza=" + rareza +
                 ", plataforma=" + plataforma +
                 '}';
