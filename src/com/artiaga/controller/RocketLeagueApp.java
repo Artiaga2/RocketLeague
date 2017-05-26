@@ -5,6 +5,7 @@ import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class RocketLeagueApp {
 
@@ -332,6 +333,39 @@ public class RocketLeagueApp {
         }
     }
 
+
+    public void deleteItem(){
+
+
+
+        ArrayList<Item> item;
+        int index;
+
+        switch (showTipo()){
+
+            case 1:
+                item = chasisArrayList;
+        }
+
+        do {
+            System.out.println("Introducir el indice: ");
+
+            index = input.nextInt();
+        }while(!correctIndex(index));
+
+        articleList.remove(index);
+
+    }
+
+
+    public static boolean correctIndex (int index, ArrayList<Item> item){
+
+        if(index >=0 && index < item.size()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 
 
