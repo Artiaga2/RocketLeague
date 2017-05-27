@@ -54,9 +54,8 @@ public class Item {
 
     @Override
     public String toString() {
-        return "nombre='" + nombre + '\'' +
-                ", rareza=" + rareza +
-                ", plataforma=" + plataforma +
-                '}';
+        return "Nombre: " + nombre  +
+                ", Rareza: " + rareza +
+                ", Plataforma: " + plataforma;
     }
 }

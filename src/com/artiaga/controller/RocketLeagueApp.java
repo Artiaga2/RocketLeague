@@ -1,11 +1,10 @@
 package com.artiaga.controller;
 
 import com.artiaga.Modelo.*;
-import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.stream.Collectors;
+
 
 public class RocketLeagueApp {
 
@@ -58,6 +57,12 @@ public class RocketLeagueApp {
 
                 case 6:
                     addItem(askItemInfo());
+                    break;
+
+                case 7:
+                    deleteItem();
+                    break;
+
             }
         }
     }
@@ -214,6 +219,7 @@ public class RocketLeagueApp {
         System.out.println("* 4 - Ver Antenas          *");
         System.out.println("* 5 - Ver Sombreros        *");
         System.out.println("* 6 - Agregar Item         *");
+        System.out.println("* 7 - Borrar Item          *");
         System.out.println("* 0 - Salir                *");
         System.out.println("****************************");
         System.out.println("Opción: ");
@@ -295,40 +301,50 @@ public class RocketLeagueApp {
 
     private void showChasisList(){
 
+        int index = 0;
+
         for (Chasis chasis: chasisArrayList) {
-            System.out.println(chasis);
+            System.out.println((index++) + "- " + chasis);
 
         }
     }
 
     private void showWhellsList(){
 
+        int index = 0;
+
         for (Rueda rueda: ruedas) {
-            System.out.println(rueda);
+            System.out.println((index++) + "- " + rueda);
 
         }
     }
 
     private void showAntenaList(){
 
+        int index = 0;
+
         for (Antena antena: antenas) {
-            System.out.println(antena);
+            System.out.println((index++) + "- " + antena);
 
         }
     }
 
     private void showBoostList(){
 
+        int index = 0;
+
         for (Nitro nitro: nitros) {
-            System.out.println(nitro);
+            System.out.println((index++) + "- " + nitro);
 
         }
     }
 
     private void showHatList(){
 
+        int index = 0;
+
         for (Sombrero sombrero: sombreros) {
-            System.out.println(sombrero);
+            System.out.println((index++) + "- " + sombrero);
 
         }
     }
@@ -337,30 +353,97 @@ public class RocketLeagueApp {
     public void deleteItem(){
 
 
+        Scanner input = new Scanner(System.in);
 
         ArrayList<Item> item;
         int index;
 
-        switch (showTipo()){
+            switch (showTipo()){
 
-            case 1:
-                item = chasisArrayList;
-        }
+                case 1:
+                    showChasisList();
 
-        do {
-            System.out.println("Introducir el indice: ");
+                    System.out.println("Introducir el indice: ");
 
-            index = input.nextInt();
-        }while(!correctIndex(index));
 
-        articleList.remove(index);
+                    index = input.nextInt();
+
+
+                    item = (ArrayList<Item>)(ArrayList<?>) chasisArrayList;
+                    item.remove(index);
+                    break;
+
+                case 2:
+                    showWhellsList();
+
+                    System.out.println("Introducir el indice: ");
+
+
+                    index = input.nextInt();
+
+
+                    item = (ArrayList<Item>)(ArrayList<?>) ruedas;
+                    item.remove(index);
+                    break;
+
+                case 3:
+
+                    showBoostList();
+                    do {
+
+
+
+                        System.out.println("Introducir el indice: ");
+
+
+                        index = input.nextInt();
+
+
+
+                    }while(!correctIndex(index));
+
+                    item = (ArrayList<Item>)(ArrayList<?>) nitros;
+                    item.remove(index);
+                    break;
+
+                case 4:
+                    showAntenaList();
+
+                    System.out.println("Introducir el indice: ");
+
+
+                    index = input.nextInt();
+
+
+                    item = (ArrayList<Item>)(ArrayList<?>) antenas;
+                    item.remove(index);
+                    break;
+
+                case 5:
+                    showHatList();
+
+                    System.out.println("Introducir el indice: ");
+
+
+                    index = input.nextInt();
+
+
+                    item = (ArrayList<Item>)(ArrayList<?>) sombreros;
+                    item.remove(index);
+                    break;
+            }
+
+
+
+
+
 
     }
 
 
-    public static boolean correctIndex (int index, ArrayList<Item> item){
+    public static boolean correctIndex (int index){
 
-        if(index >=0 && index < item.size()){
+        if(index >=0){
             return true;
         }else{
             return false;
