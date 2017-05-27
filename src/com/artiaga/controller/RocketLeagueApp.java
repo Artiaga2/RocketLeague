@@ -54,15 +54,12 @@ public class RocketLeagueApp {
                 case 5:
                     showHatList();
                     break;
-
                 case 6:
                     addItem(askItemInfo());
                     break;
-
                 case 7:
                     deleteItem();
                     break;
-
             }
         }
     }
@@ -91,8 +88,6 @@ public class RocketLeagueApp {
         }
 
     }
-
-
 
 
     private Item askItemInfo() {
@@ -362,12 +357,13 @@ public class RocketLeagueApp {
 
                 case 1:
                     showChasisList();
+                    do {
 
-                    System.out.println("Introducir el indice: ");
+                        System.out.println("Introducir el indice: ");
 
+                        index = input.nextInt();
 
-                    index = input.nextInt();
-
+                    }while(!correctIndex(index));
 
                     item = (ArrayList<Item>)(ArrayList<?>) chasisArrayList;
                     item.remove(index);
@@ -375,12 +371,13 @@ public class RocketLeagueApp {
 
                 case 2:
                     showWhellsList();
+                    do {
 
-                    System.out.println("Introducir el indice: ");
+                        System.out.println("Introducir el indice: ");
 
+                        index = input.nextInt();
 
-                    index = input.nextInt();
-
+                    }while(!correctIndex(index));
 
                     item = (ArrayList<Item>)(ArrayList<?>) ruedas;
                     item.remove(index);
@@ -391,14 +388,9 @@ public class RocketLeagueApp {
                     showBoostList();
                     do {
 
-
-
                         System.out.println("Introducir el indice: ");
 
-
                         index = input.nextInt();
-
-
 
                     }while(!correctIndex(index));
 
@@ -408,11 +400,13 @@ public class RocketLeagueApp {
 
                 case 4:
                     showAntenaList();
+                    do {
 
-                    System.out.println("Introducir el indice: ");
+                        System.out.println("Introducir el indice: ");
 
+                        index = input.nextInt();
 
-                    index = input.nextInt();
+                    }while(!correctIndex(index));
 
 
                     item = (ArrayList<Item>)(ArrayList<?>) antenas;
@@ -422,22 +416,18 @@ public class RocketLeagueApp {
                 case 5:
                     showHatList();
 
-                    System.out.println("Introducir el indice: ");
+                    do {
 
+                        System.out.println("Introducir el indice: ");
 
-                    index = input.nextInt();
+                        index = input.nextInt();
 
+                    }while(!correctIndex(index));
 
                     item = (ArrayList<Item>)(ArrayList<?>) sombreros;
                     item.remove(index);
                     break;
             }
-
-
-
-
-
-
     }
 
 
@@ -449,8 +439,6 @@ public class RocketLeagueApp {
             return false;
         }
     }
-
-
 
     private void loadChasis(){
 
@@ -492,8 +480,6 @@ public class RocketLeagueApp {
         chasisArrayList.add(new Chasis("ENDO", Rareza.IMPORT, Plataforma.TODAS));
         chasisArrayList.add(new Chasis("ICE CHARGER", Rareza.PREMIUM, Plataforma.TODAS));
         chasisArrayList.add(new Chasis("MANTIS", Rareza.IMPORT, Plataforma.TODAS));
-
-
     }
 
     private void loadWhells() {
@@ -570,11 +556,8 @@ public class RocketLeagueApp {
         ruedas.add(new Rueda("Triplex", Rareza.IMPORT, Plataforma.TODAS));
         ruedas.add(new Rueda("Draco", Rareza.EXOTICO, Plataforma.TODAS));
         ruedas.add(new Rueda("K2", Rareza.EXOTICO, Plataforma.TODAS));
-        
-
     }
-    
-    
+
     private void loadBoosts (){
 
         nitros.add(new Nitro("Confetti", Rareza.COMUN, Plataforma.TODAS));
@@ -757,10 +740,7 @@ public class RocketLeagueApp {
        antenas.add(new Antena("Vikkstar", Rareza.COMUN, Plataforma.TODAS));
        antenas.add(new Antena("RLCS", Rareza.COMUN, Plataforma.TODAS));
        antenas.add(new Antena("Easter Egg", Rareza.LIMITADO, Plataforma.TODAS));
-
-
    }
-
 
    private void loadSombreros (){
 
