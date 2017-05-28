@@ -8,15 +8,20 @@ import java.util.Scanner;
 
 public class RocketLeagueApp {
 
+    /**
+     * Constantes y Variables
+     */
+
    private ArrayList <Item> items;
     private ArrayList <Chasis> chasisArrayList;
     private ArrayList <Rueda> ruedas;
     private ArrayList <Nitro> nitros;
     private ArrayList <Antena> antenas;
     private ArrayList <Sombrero> sombreros;
-    
-    //Constructor
 
+    /**
+     * Constructor
+     */
 
     public RocketLeagueApp() {
         items = new ArrayList<>();
@@ -34,6 +39,10 @@ public class RocketLeagueApp {
     }
 
 
+    /**
+     * Metodo para iniciar el programa.
+     * Muestra las opciones a elegir y dependiendo de la opcion carga un tipo de ArrayList o nos permite agregar o eliminar items de cualquier ArrayList.
+     */
     public void start() {
         int option;
 
@@ -64,6 +73,10 @@ public class RocketLeagueApp {
         }
     }
 
+    /**
+     * Metodo para agregar un item al ArrayList(Según el tipo que elijamos) que tenemos instanciado por defecto en el programa.
+     * @param item : El Item que queremos añadir
+     */
     public void addItem(Item item) {
 
 
@@ -89,7 +102,10 @@ public class RocketLeagueApp {
 
     }
 
-
+    /**
+     *Metodo para que el usuario ingrese por pantalla el item que quiere añadir (tipo, nombre, rareza y plataforma)
+     * @return tipo: Devuelve el tipo de Arraylist dependiendo de lo que haya elegido el usuario (tipo, nombre, rareza y plataforma)
+     */
     private Item askItemInfo() {
         Scanner scanner = new Scanner(System.in);
         String nombre = "";
@@ -202,7 +218,10 @@ public class RocketLeagueApp {
        return tipo;
         }
 
-
+    /**
+     * Metodo Menu que se le muestra por pantalla el usuario
+     * @return Devuelve la opcion que el usuario ha elegido y la muestra por pantalla con el Metodo start
+     */
     private int showMenu() {
         Scanner scanner = new Scanner(System.in);
         int option;
@@ -224,6 +243,10 @@ public class RocketLeagueApp {
         return option;
     }
 
+    /**
+     * Metodo tipo menu que se le muestra por pantalla al usuario para poder elegir el tipo en la funcion askItemInfo.
+     * @return devuelve el tipo que el usuario ha elegido para que se cambie el tipo por defecto (Item) en la funcion askItemInfo
+     */
     private int showTipo(){
 
         Scanner scanner = new Scanner(System.in);
@@ -243,6 +266,10 @@ public class RocketLeagueApp {
         return option;
     }
 
+    /**
+     * Metodo tipo menu que se le muestra por pantalla al usuario para poder elegir la rareza en la funcion askItemInfo.
+     * @return devuelve la rareza que el usuario ha elegido para que se cambie la rareza por defecto (Rareza.COMUN) en la funcion askItemInfo
+     */
     private int showRareza (){
 
         Scanner scanner = new Scanner(System.in);
@@ -267,6 +294,10 @@ public class RocketLeagueApp {
 
     }
 
+    /**
+     * Metodo tipo menu que se le muestra por pantalla al usuario para poder elegir la plataforma en la funcion askItemInfo.
+     * @return devuelve la plataforma que el usuario ha elegido para que se cambie la plataforma por defecto (Plataforma.TODAS) en la funcion askItemInfo
+     */
     private int showPlataforma (){
 
         Scanner scanner = new Scanner(System.in);
@@ -285,15 +316,9 @@ public class RocketLeagueApp {
         return option;
     }
 
-    private void showItemList() {
-
-        for (Item item : items) {
-
-            System.out.println(item);
-        }
-
-    }
-
+    /**
+     * Muestra el ArrayList de Chasis ordenado por un indice
+     */
     private void showChasisList(){
 
         int index = 0;
@@ -304,6 +329,9 @@ public class RocketLeagueApp {
         }
     }
 
+    /**
+     * Muestra el ArrayList de Rueda ordenado por un indice
+     */
     private void showWhellsList(){
 
         int index = 0;
@@ -314,6 +342,9 @@ public class RocketLeagueApp {
         }
     }
 
+    /**
+     * Muestra el ArrayList de Antena ordenado por un indice
+     */
     private void showAntenaList(){
 
         int index = 0;
@@ -324,6 +355,9 @@ public class RocketLeagueApp {
         }
     }
 
+    /**
+     * Muestra el ArrayList de Nitro ordenado por un indice
+     */
     private void showBoostList(){
 
         int index = 0;
@@ -334,6 +368,9 @@ public class RocketLeagueApp {
         }
     }
 
+    /**
+     * Muestra el ArrayList de Sombrero ordenado por un indice
+     */
     private void showHatList(){
 
         int index = 0;
@@ -344,7 +381,12 @@ public class RocketLeagueApp {
         }
     }
 
-
+    /**
+     * Funcion que se usa para Borrar el item que el usuario ha introducido por pantalla
+     * La funcion le muestra por pantalla al usuario el tipo que desea borrar, una vez que el usuario ha elegido el tipo
+     * se le muestra por pantalla el ArrayList del tipo que ha elegido ordenados por un indice.
+     *Por ultimo se le pide al usuario que ingrese por pantalla el indice del objeto que desea eliminar.
+     */
     public void deleteItem(){
 
 
@@ -439,6 +481,7 @@ public class RocketLeagueApp {
             return false;
         }
     }
+
 
     private void loadChasis(){
 
