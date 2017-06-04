@@ -7,9 +7,9 @@ import java.io.Serializable;
 /**
  * Created by artiaga on 6/3/17.
  */
-public class Item {
+public class Item implements Serializable {
 
-
+    private static final long serialVersionUID = -303304975130302802L;
     private String nombre;
     private Rareza rareza;
     private Plataforma plataforma;

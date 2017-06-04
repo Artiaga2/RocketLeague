@@ -1,14 +1,13 @@
 package com.artiaga.Modelo;
 
-import java.io.Serializable;
-import java.util.ArrayList;
+
 import java.util.Comparator;
 
 /**
  * Created by artiaga on 6/3/17.
  */
-public class Chasis extends Item implements Serializable{
-    private static final long serialVersionUID = -303304975130302802L;
+public class Chasis extends Item{
+
 
 
     //Constructor
