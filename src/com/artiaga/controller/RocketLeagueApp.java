@@ -14,7 +14,7 @@ public class RocketLeagueApp {
      * Constantes y Variables
      */
 
-   private ArrayList <Item> items;
+    private ArrayList <Item> items;
     private ArrayList <Chasis> chasisArrayList;
     private ArrayList <Rueda> ruedas;
     private ArrayList <Nitro> nitros;
@@ -42,6 +42,9 @@ public class RocketLeagueApp {
             loadItems();
     }
 
+    /**
+     * Funcion que se usa para guardar todos los objetos en un archivo .dat
+     */
     public void guardarItems() {
 
         try {
@@ -58,6 +61,10 @@ public class RocketLeagueApp {
         }
     }
 
+
+    /**
+     * Funcion que se usa para cargar los objetos
+     */
     public void loadItems() {
         try {
             ObjectInputStream fichero = new ObjectInputStream(new FileInputStream("Objetos.dat"));
@@ -277,20 +284,21 @@ public class RocketLeagueApp {
         Scanner scanner = new Scanner(System.in);
         int option;
 
-        System.out.println("**********************************");
-        System.out.println("* 1 - Ver Chasis                 *");
-        System.out.println("* 2 - Ver Ruedas                 *");
-        System.out.println("* 3 - Ver Nitros                 *");
-        System.out.println("* 4 - Ver Antenas                *");
-        System.out.println("* 5 - Ver Sombreros              *");
-        System.out.println("* 6 - Agregar Item               *");
-        System.out.println("* 7 - Borrar Item                *");
-        System.out.println("* 8 - Ordenacion por Nombre      *");
-        System.out.println("* 9 - Ordenacion por Rareza      *");
-        System.out.println("* 10 - Ordenacion por Plataforma *");
-        System.out.println("* 11 - Guardar Cambios           *");
-        System.out.println("* 0 - Salir                      *");
-        System.out.println("**********************************");
+        System.out.println("************************************");
+        System.out.println("* Introduzca un numero de la Lista *");
+        System.out.println("* 1 - Ver Chasis                   *");
+        System.out.println("* 2 - Ver Ruedas                   *");
+        System.out.println("* 3 - Ver Nitros                   *");
+        System.out.println("* 4 - Ver Antenas                  *");
+        System.out.println("* 5 - Ver Sombreros                *");
+        System.out.println("* 6 - Agregar Item                 *");
+        System.out.println("* 7 - Borrar Item                  *");
+        System.out.println("* 8 - Ordenacion por Nombre        *");
+        System.out.println("* 9 - Ordenacion por Rareza        *");
+        System.out.println("* 10 - Ordenacion por Plataforma   *");
+        System.out.println("* 11 - Guardar Cambios             *");
+        System.out.println("* 0 - Salir                        *");
+        System.out.println("************************************");
         System.out.println("Opción: ");
 
         option = scanner.nextInt();
@@ -385,6 +393,7 @@ public class RocketLeagueApp {
         Scanner scanner = new Scanner(System.in);
         int option;
 
+        System.out.println("*      Elige un Tipo       *");
         System.out.println("****************************");
         System.out.println("* 1 -  Chasis              *");
         System.out.println("* 2 -  Rueda               *");
@@ -408,7 +417,7 @@ public class RocketLeagueApp {
         Scanner scanner = new Scanner(System.in);
         int option;
 
-        System.out.println("*       Rocket League      *");
+
         System.out.println("****************************");
         System.out.println("* 1 - Comun                *");
         System.out.println("* 2 - Premium              *");
