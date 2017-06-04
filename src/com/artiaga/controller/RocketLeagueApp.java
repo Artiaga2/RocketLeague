@@ -1,8 +1,8 @@
 package com.artiaga.controller;
 
 import com.artiaga.Modelo.*;
-
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 
@@ -68,6 +68,18 @@ public class RocketLeagueApp {
                     break;
                 case 7:
                     deleteItem();
+                    break;
+
+                case 8:
+                    ordenacionPorNombre();
+                    break;
+
+                case 9:
+                    ordenacionPorRareza();
+                    break;
+
+                case 10:
+                    ordenacionPorPlataforma();
                     break;
             }
         }
@@ -226,22 +238,103 @@ public class RocketLeagueApp {
         Scanner scanner = new Scanner(System.in);
         int option;
 
-        System.out.println("****************************");
-        System.out.println("* 1 - Ver Chasis           *");
-        System.out.println("* 2 - Ver Ruedas           *");
-        System.out.println("* 3 - Ver Nitros           *");
-        System.out.println("* 4 - Ver Antenas          *");
-        System.out.println("* 5 - Ver Sombreros        *");
-        System.out.println("* 6 - Agregar Item         *");
-        System.out.println("* 7 - Borrar Item          *");
-        System.out.println("* 0 - Salir                *");
-        System.out.println("****************************");
+        System.out.println("*********************************");
+        System.out.println("* 1 - Ver Chasis                *");
+        System.out.println("* 2 - Ver Ruedas                *");
+        System.out.println("* 3 - Ver Nitros                *");
+        System.out.println("* 4 - Ver Antenas               *");
+        System.out.println("* 5 - Ver Sombreros             *");
+        System.out.println("* 6 - Agregar Item              *");
+        System.out.println("* 7 - Borrar Item               *");
+        System.out.println("* 8 - Ordenacion por Nombre     *");
+        System.out.println("* 9 - Ordenacion por Rareza     *");
+        System.out.println("* 10 - Ordenacion por Plataforma *");
+        System.out.println("* 0 - Salir                     *");
+        System.out.println("*********************************");
         System.out.println("Opción: ");
 
         option = scanner.nextInt();
 
         return option;
     }
+
+    public void ordenacionPorNombre() {
+
+
+            switch (showTipo()) {
+                case 1:
+                    ordenarPorNombreChasis();
+                    break;
+
+                case 2:
+                    ordenarPorNombreRueda();
+                    break;
+
+                case 3:
+                    ordenarPorNombreNitro();
+                    break;
+
+                case 4:
+                    ordenarPorNombreAntena();
+                    break;
+
+                case 5:
+                    ordenarPorNombreSombrero();
+                    break;
+            }
+        }
+
+    public void ordenacionPorRareza() {
+
+            switch (showTipo()) {
+                case 1:
+                    ordenarPorRarezaChasis();
+                    break;
+
+                case 2:
+                    ordenarPorRarezaRueda();
+                    break;
+
+                case 3:
+                    ordenarPorRarezaRueda();
+                    break;
+
+                case 4:
+                    ordenarPorRarezaRueda();
+                    break;
+
+                case 5:
+                    ordenarPorRarezaRueda();
+                    break;
+            }
+        }
+
+    public void ordenacionPorPlataforma() {
+
+
+            switch (showTipo()) {
+                case 1:
+                    ordenarPorPlataformaChasis();
+                    break;
+
+                case 2:
+                    ordenarPorPlataformaRueda();
+                    break;
+
+                case 3:
+                    ordenarPorPlataformaNitro();
+                    break;
+
+                case 4:
+                    ordenarPorPlataformaAntena();
+                    break;
+
+                case 5:
+                    ordenarPorPlataformaSombrero();
+                    break;
+            }
+        }
+
 
     /**
      * Metodo tipo menu que se le muestra por pantalla al usuario para poder elegir el tipo en la funcion askItemInfo.
@@ -482,6 +575,140 @@ public class RocketLeagueApp {
         }
     }
 
+    private void ordenarPorNombreChasis(){
+        Collections.sort(chasisArrayList, Chasis.comparadorPorNombreChasis);
+
+        for (Chasis chasis : chasisArrayList)
+        {
+            System.out.println(chasis);
+        }
+    }
+
+    private void ordenarPorRarezaChasis(){
+        Collections.sort(chasisArrayList, Chasis.comparadorPorRarezaChasis);
+
+        for (Chasis chasis : chasisArrayList)
+        {
+            System.out.println(chasis);
+        }
+    }
+
+    private void ordenarPorPlataformaChasis(){
+        Collections.sort(chasisArrayList, Chasis.comparadorPorPlataformaChasis);
+
+        for (Chasis chasis : chasisArrayList)
+        {
+            System.out.println(chasis);
+        }
+    }
+
+    private void ordenarPorNombreRueda(){
+        Collections.sort(ruedas, Rueda.comparadorPorNombreRueda);
+
+        for (Rueda rueda : ruedas)
+        {
+            System.out.println(rueda);
+        }
+    }
+
+    private void ordenarPorRarezaRueda(){
+        Collections.sort(ruedas, Rueda.comparadorPorRarezaRueda);
+
+        for (Rueda rueda : ruedas)
+        {
+            System.out.println(rueda);
+        }
+    }
+
+    private void ordenarPorPlataformaRueda(){
+        Collections.sort(ruedas, Rueda.comparadorPorPlataformaRueda);
+
+        for (Rueda rueda : ruedas)
+        {
+            System.out.println(rueda);
+        }
+    }
+
+    private void ordenarPorNombreNitro(){
+        Collections.sort(nitros, Nitro.comparadorPorNombreNitro);
+
+        for (Nitro nitro : nitros)
+        {
+            System.out.println(nitro);
+        }
+    }
+
+    private void ordenarPorRarezaNitro(){
+        Collections.sort(nitros, Nitro.comparadorPorRarezaNitro);
+
+        for (Nitro nitro : nitros)
+        {
+            System.out.println(nitro);
+        }
+    }
+
+    private void ordenarPorPlataformaNitro(){
+        Collections.sort(nitros, Nitro.comparadorPorPlataformaNitro);
+
+        for (Nitro nitro : nitros)
+        {
+            System.out.println(nitro);
+        }
+    }
+
+    private void ordenarPorNombreAntena(){
+        Collections.sort(antenas, Antena.comparadorPorNombreAntena);
+
+        for (Antena antena : antenas)
+        {
+            System.out.println(antena);
+        }
+    }
+
+    private void ordenarPorRarezaeAntena(){
+        Collections.sort(antenas, Antena.comparadorPorRarezaAntena);
+
+        for (Antena antena : antenas)
+        {
+            System.out.println(antena);
+        }
+    }
+
+    private void ordenarPorPlataformaAntena(){
+        Collections.sort(antenas, Antena.comparadorPorPlataformaAntena);
+
+        for (Antena antena : antenas)
+        {
+            System.out.println(antena);
+        }
+    }
+
+    private void ordenarPorNombreSombrero(){
+        Collections.sort(sombreros, Sombrero.comparadorPorNombreSombrero);
+
+        for (Sombrero sombrero : sombreros)
+        {
+            System.out.println(sombrero);
+        }
+    }
+
+    private void ordenarPorRarezaSombrero(){
+        Collections.sort(sombreros, Sombrero.comparadorPorRarezaSombrero);
+
+        for (Sombrero sombrero : sombreros)
+        {
+            System.out.println(sombrero);
+        }
+    }
+
+    private void ordenarPorPlataformaSombrero(){
+        Collections.sort(sombreros, Sombrero.comparadorPorPlataformaSombrero);
+
+        for (Sombrero sombrero : sombreros)
+        {
+            System.out.println(sombrero);
+        }
+    }
 
     private void loadChasis(){
 

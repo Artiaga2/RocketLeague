@@ -2,10 +2,13 @@ package com.artiaga.Modelo;
 
 import com.artiaga.controller.RocketLeagueApp;
 
+import java.io.Serializable;
+
 /**
  * Created by artiaga on 6/3/17.
  */
 public class Item {
+
 
     private String nombre;
     private Rareza rareza;
@@ -51,6 +54,10 @@ public class Item {
     public void setPlataforma(Plataforma plataforma) {
         this.plataforma = plataforma;
     }
+
+
+
+
 
     @Override
     public String toString() {
