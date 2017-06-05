@@ -33,12 +33,12 @@ public class RocketLeagueApp {
         antenas = new ArrayList<>();
         sombreros = new ArrayList<>();
 
-        loadChasis();
-        loadWhells();
-        loadBoosts();
-        loadAntenas();
-        loadSombreros();
-        guardarItems();
+//        loadChasis();
+//        loadWhells();
+//        loadBoosts();
+//        loadAntenas();
+//        loadSombreros();
+//        guardarItems();
             loadItems();
     }
 
