@@ -89,6 +89,8 @@ public class RocketLeagueApp {
     public void start() {
         int option;
 
+        try {
+
         while ((option = showMenu()) != 0) {
             switch (option) {
                 case 1:
@@ -127,9 +129,17 @@ public class RocketLeagueApp {
                 case 11:
                     guardarItems();
                     break;
+
             }
+            }
+        }catch (Exception e){
+
+            System.out.println("Introduzca un numero de la Lista por favor");
+            start();
         }
     }
+
+   // public void
 
     /**
      * Metodo para agregar un item al ArrayList(Según el tipo que elijamos) que tenemos instanciado por defecto en el programa.
