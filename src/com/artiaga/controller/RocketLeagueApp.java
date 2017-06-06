@@ -930,7 +930,7 @@ public class RocketLeagueApp {
     /**
      * Funcion que al pasarle el parametro index nos devuelve un true o false dependiendo
      * de si es mayor que 0 y menos que el tamaño del array
-     * @param index
+     * @param index parametro que mete el usuario en la funcion deleteItems()
      * @return
      */
     public boolean correctIndexChasis (int index){
