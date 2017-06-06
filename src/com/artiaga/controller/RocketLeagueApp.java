@@ -5,6 +5,7 @@ import com.artiaga.Modelo.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -130,16 +131,15 @@ public class RocketLeagueApp {
                     guardarItems();
                     break;
 
-            }
-            }
-        }catch (Exception e){
+                 }
+             }
+        }catch (InputMismatchException e){
 
             System.out.println("Introduzca un numero de la Lista por favor");
             start();
         }
     }
 
-   // public void
 
     /**
      * Metodo para agregar un item al ArrayList(Según el tipo que elijamos) que tenemos instanciado por defecto en el programa.
@@ -180,6 +180,8 @@ public class RocketLeagueApp {
         Rareza rareza = Rareza.COMUN;
         Plataforma plataforma = Plataforma.TODAS;
         Item tipo = new Item(nombre, rareza , plataforma);
+        int optionRareza, optionPlataforma, optionTipo;
+
 
         do {
             System.out.println("Nombre del objeto: ");
@@ -187,100 +189,131 @@ public class RocketLeagueApp {
         } while (nombre.equals(""));
 
 
-        System.out.println("Rareza ");
-        switch (showRareza()) {
+        try {
 
-            case 1:
-                System.out.println("1 - Rareza Común");
-                rareza = Rareza.COMUN;
-                break;
+            do {
 
-            case 2:
-                System.out.println("2 - Rareza  Premium");
-                rareza = Rareza.PREMIUM;
-                break;
+                System.out.println("Rareza ");
+                switch (optionRareza = showRareza()) {
 
-            case 3:
-                System.out.println("2 - Rareza  Limitado");
-                rareza = Rareza.LIMITADO;
-                break;
+                    case 1:
+                        System.out.println("1 - Rareza Común");
+                        rareza = Rareza.COMUN;
+                        break;
 
-            case 4:
-                System.out.println("3 - Rareza Raro");
-                rareza = Rareza.RARO;
-                break;
+                    case 2:
+                        System.out.println("2 - Rareza  Premium");
+                        rareza = Rareza.PREMIUM;
+                        break;
 
-            case 5:
-                System.out.println("4 - Rareza Muy Raro");
-                rareza = Rareza.MUYRARO;
-                break;
+                    case 3:
+                        System.out.println("3 - Rareza  Limitado");
+                        rareza = Rareza.LIMITADO;
+                        break;
 
-            case 6:
-                System.out.println("5 - Rareza Importado");
-                rareza = Rareza.IMPORT;
-                break;
+                    case 4:
+                        System.out.println("4 - Rareza Raro");
+                        rareza = Rareza.RARO;
+                        break;
 
-            case 7:
-                System.out.println("6 - Rareza Exotico");
-                rareza = Rareza.EXOTICO;
-                break;
+                    case 5:
+                        System.out.println("5 - Rareza Muy Raro");
+                        rareza = Rareza.MUYRARO;
+                        break;
 
-            case 8:
-                System.out.println("7 - Rareza Poco común");
-                rareza = Rareza.POCOCOMUN;
-                break;
+                    case 6:
+                        System.out.println("6 - Rareza Importado");
+                        rareza = Rareza.IMPORT;
+                        break;
 
-            case 9:
-                System.out.println("8 - Super Raro");
-                rareza = Rareza.SUPERARO;
-                break;
+                    case 7:
+                        System.out.println("7 - Rareza Exotico");
+                        rareza = Rareza.EXOTICO;
+                        break;
 
+                    case 8:
+                        System.out.println("8 - Rareza Poco común");
+                        rareza = Rareza.POCOCOMUN;
+                        break;
+
+                    case 9:
+                        System.out.println("9 - Super Raro");
+                        rareza = Rareza.SUPERARO;
+                        break;
+
+                }
+            } while (optionRareza > 9 || optionRareza < 1 );
+
+        }catch (InputMismatchException e){
+            System.out.println("Introduzca la rareza correcta por favor");
+            askItemInfo();
         }
 
-            System.out.println("Plataforma ");
-            switch (showPlataforma()) {
+        try {
 
+
+            do {
+
+                System.out.println("Plataforma ");
+                switch (optionPlataforma = showPlataforma()) {
+
+                    case 1:
+                        System.out.println("1 - Plataforma TODAS");
+                        plataforma = Plataforma.TODAS;
+
+                        break;
+
+                    case 2:
+                        System.out.println("2 - Plataforma PC");
+                        plataforma = Plataforma.PC;
+                        break;
+
+                    case 3:
+                        System.out.println("3 - Plataforma PLAY");
+                        plataforma = Plataforma.PLAY;
+                        break;
+
+                    case 4:
+                        System.out.println("4 - Plataforma XBOX");
+                        plataforma = Plataforma.XBOX;
+                        break;
+                }
+            }while (optionPlataforma > 4 || optionPlataforma < 1);
+
+        }catch (InputMismatchException e){
+            System.out.println("Introduzca la Plataforma correcta por favor");
+            askItemInfo();
+        }
+
+        try {
+
+            do {
+
+            System.out.println("Elige un tipo");
+
+            switch (optionTipo = showTipo()) {
                 case 1:
-                    System.out.println("1 - Plataforma TODAS");
-                    plataforma = Plataforma.TODAS;
-
+                    tipo = new Chasis(nombre, rareza, plataforma);
                     break;
-
                 case 2:
-                    System.out.println("2 - Plataforma PC");
-                    plataforma = Plataforma.PC;
+                    tipo = new Rueda(nombre, rareza, plataforma);
                     break;
-
                 case 3:
-                    System.out.println("3 - Plataforma PLAY");
-                    plataforma = Plataforma.PLAY;
+                    tipo = new Nitro(nombre, rareza, plataforma);
                     break;
-
                 case 4:
-                    System.out.println("4 - Plataforma XBOX");
-                    plataforma = Plataforma.XBOX;
+                    tipo = new Antena(nombre, rareza, plataforma);
                     break;
-            }
+                case 5:
+                    tipo = new Sombrero(nombre, rareza, plataforma);
+                    break;
+                }
 
+            }while (optionTipo > 5 || optionTipo < 1 );
 
-        System.out.println("Elige un tipo");
-
-        switch (showTipo()){
-            case 1:
-                tipo = new Chasis(nombre, rareza,plataforma);
-                break;
-            case 2:
-                tipo = new Rueda(nombre, rareza,plataforma);
-                break;
-            case 3:
-                tipo = new Nitro(nombre, rareza,plataforma);
-                break;
-            case 4:
-                tipo = new Antena(nombre, rareza,plataforma);
-                break;
-            case 5:
-                tipo = new Sombrero(nombre, rareza,plataforma);
-                break;
+        }catch (InputMismatchException e){
+            System.out.println("Introduzca el Tipo correcto por favor");
+            askItemInfo();
         }
 
        return tipo;
@@ -669,6 +702,28 @@ public class RocketLeagueApp {
         }
     }
 
+    public void modifyChasis(String nombre, Rareza rareza, Plataforma plataforma, int index) {
+        chasisArrayList.get(index).setNombre(nombre);
+        chasisArrayList.get(index).setRareza(rareza);
+        chasisArrayList.get(index).setPlataforma(plataforma);
+    }
+
+//    public void upgradeIndex() {
+//        Scanner input = new Scanner(System.in);
+//        String nombre = "";
+//        Rareza rareza = Rareza.COMUN;
+//        Plataforma plataforma = Plataforma.TODAS;
+//
+//        Item tipo = askItemInfo();
+//
+//        int index = 0;
+//
+//        index = input.nextInt();
+//
+//
+//       tipo = modifyWeapon(nombre,rareza,plataforma,index);
+//    }
+
     /**
      * Funcion que se usa para Borrar el item que el usuario ha introducido por pantalla
      * La funcion le muestra por pantalla al usuario el tipo que desea borrar, una vez que el usuario ha elegido el tipo
@@ -683,19 +738,24 @@ public class RocketLeagueApp {
         ArrayList<Item> item;
         int index;
 
-            switch (showTipo()){
+
+        try {
+
+            switch (showTipo()) {
 
                 case 1:
                     showChasisList();
+
+
                     do {
 
                         System.out.println("Introducir el indice: ");
 
                         index = input.nextInt();
 
-                    }while(!correctIndex(index));
+                    } while (!correctIndexChasis(index));
 
-                    item = (ArrayList<Item>)(ArrayList<?>) chasisArrayList;
+                    item = (ArrayList<Item>) (ArrayList<?>) chasisArrayList;
                     item.remove(index);
                     break;
 
@@ -707,9 +767,9 @@ public class RocketLeagueApp {
 
                         index = input.nextInt();
 
-                    }while(!correctIndex(index));
+                    } while (!correctIndexRueda(index));
 
-                    item = (ArrayList<Item>)(ArrayList<?>) ruedas;
+                    item = (ArrayList<Item>) (ArrayList<?>) ruedas;
                     item.remove(index);
                     break;
 
@@ -722,9 +782,9 @@ public class RocketLeagueApp {
 
                         index = input.nextInt();
 
-                    }while(!correctIndex(index));
+                    } while (!correctIndexNitro(index));
 
-                    item = (ArrayList<Item>)(ArrayList<?>) nitros;
+                    item = (ArrayList<Item>) (ArrayList<?>) nitros;
                     item.remove(index);
                     break;
 
@@ -736,10 +796,10 @@ public class RocketLeagueApp {
 
                         index = input.nextInt();
 
-                    }while(!correctIndex(index));
+                    } while (!correctIndexAntena(index));
 
 
-                    item = (ArrayList<Item>)(ArrayList<?>) antenas;
+                    item = (ArrayList<Item>) (ArrayList<?>) antenas;
                     item.remove(index);
                     break;
 
@@ -752,18 +812,59 @@ public class RocketLeagueApp {
 
                         index = input.nextInt();
 
-                    }while(!correctIndex(index));
+                    } while (!correctIndexSombrero(index));
 
-                    item = (ArrayList<Item>)(ArrayList<?>) sombreros;
+                    item = (ArrayList<Item>) (ArrayList<?>) sombreros;
                     item.remove(index);
                     break;
             }
+
+        }catch (InputMismatchException e){
+            System.out.println("Introduzca el indice correcto por favor");
+            deleteItem();
+        }
     }
 
 
-    public static boolean correctIndex (int index){
+    public boolean correctIndexChasis (int index){
 
-        if(index >=0){
+        if(index >=0  && index < chasisArrayList.size() ){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public boolean correctIndexRueda (int index){
+
+        if(index >=0  && index < ruedas.size() ){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public boolean correctIndexNitro (int index){
+
+        if(index >=0  && index < nitros.size() ){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public boolean correctIndexAntena (int index){
+
+        if(index >=0  && index < antenas.size() ){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public boolean correctIndexSombrero (int index){
+
+        if(index >=0  && index < sombreros.size() ){
             return true;
         }else{
             return false;
