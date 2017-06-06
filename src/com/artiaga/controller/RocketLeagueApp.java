@@ -185,7 +185,7 @@ public class RocketLeagueApp {
         Rareza rareza = Rareza.COMUN;
         Plataforma plataforma = Plataforma.TODAS;
         Item tipo = new Item(nombre, rareza , plataforma);
-        int optionRareza, optionPlataforma, optionTipo;
+        int optionRareza = 0, optionPlataforma = 0, optionTipo = 0;
 
 
         do {
@@ -194,70 +194,76 @@ public class RocketLeagueApp {
         } while (nombre.equals(""));
 
 
-        try {
 
             do {
 
-                System.out.println("Rareza ");
-                switch (optionRareza = showRareza()) {
+                try {
 
-                    case 1:
-                        System.out.println("1 - Rareza Común");
-                        rareza = Rareza.COMUN;
-                        break;
 
-                    case 2:
-                        System.out.println("2 - Rareza  Premium");
-                        rareza = Rareza.PREMIUM;
-                        break;
+                        System.out.println("Rareza ");
+                    switch (optionRareza = showRareza()) {
 
-                    case 3:
-                        System.out.println("3 - Rareza  Limitado");
-                        rareza = Rareza.LIMITADO;
-                        break;
+                        case 1:
+                            System.out.println("1 - Rareza Común");
+                            rareza = Rareza.COMUN;
+                            break;
 
-                    case 4:
-                        System.out.println("4 - Rareza Raro");
-                        rareza = Rareza.RARO;
-                        break;
+                        case 2:
+                            System.out.println("2 - Rareza  Premium");
+                            rareza = Rareza.PREMIUM;
+                            break;
 
-                    case 5:
-                        System.out.println("5 - Rareza Muy Raro");
-                        rareza = Rareza.MUYRARO;
-                        break;
+                        case 3:
+                            System.out.println("3 - Rareza  Limitado");
+                            rareza = Rareza.LIMITADO;
+                            break;
 
-                    case 6:
-                        System.out.println("6 - Rareza Importado");
-                        rareza = Rareza.IMPORT;
-                        break;
+                        case 4:
+                            System.out.println("4 - Rareza Raro");
+                            rareza = Rareza.RARO;
+                            break;
 
-                    case 7:
-                        System.out.println("7 - Rareza Exotico");
-                        rareza = Rareza.EXOTICO;
-                        break;
+                        case 5:
+                            System.out.println("5 - Rareza Muy Raro");
+                            rareza = Rareza.MUYRARO;
+                            break;
 
-                    case 8:
-                        System.out.println("8 - Rareza Poco común");
-                        rareza = Rareza.POCOCOMUN;
-                        break;
+                        case 6:
+                            System.out.println("6 - Rareza Importado");
+                            rareza = Rareza.IMPORT;
+                            break;
 
-                    case 9:
-                        System.out.println("9 - Super Raro");
-                        rareza = Rareza.SUPERARO;
-                        break;
+                        case 7:
+                            System.out.println("7 - Rareza Exotico");
+                            rareza = Rareza.EXOTICO;
+                            break;
+
+                        case 8:
+                            System.out.println("8 - Rareza Poco común");
+                            rareza = Rareza.POCOCOMUN;
+                            break;
+
+                        case 9:
+                            System.out.println("9 - Super Raro");
+                            rareza = Rareza.SUPERARO;
+                            break;
+
+                    }
+
+                }catch (InputMismatchException e){
+                    System.out.println("Rareza incorrecta. Vuelva a introducir la rareza por favor");
 
                 }
             } while (optionRareza > 9 || optionRareza < 1 );
 
-        }catch (InputMismatchException e){
-            System.out.println("Introduzca la rareza correcta por favor");
-            askItemInfo();
-        }
 
-        try {
+
+
 
 
             do {
+
+                try {
 
                 System.out.println("Plataforma ");
                 switch (optionPlataforma = showPlataforma()) {
@@ -283,43 +289,46 @@ public class RocketLeagueApp {
                         plataforma = Plataforma.XBOX;
                         break;
                 }
+
+                }catch (InputMismatchException e){
+                    System.out.println("Plataforma incorrecta. Vuelva a introducir la plataforma por favor");
+
+                }
+
             }while (optionPlataforma > 4 || optionPlataforma < 1);
 
-        }catch (InputMismatchException e){
-            System.out.println("Introduzca la Plataforma correcta por favor");
-            askItemInfo();
-        }
 
-        try {
 
             do {
 
-            System.out.println("Elige un tipo");
+                try {
 
-            switch (optionTipo = showTipo()) {
-                case 1:
-                    tipo = new Chasis(nombre, rareza, plataforma);
-                    break;
-                case 2:
-                    tipo = new Rueda(nombre, rareza, plataforma);
-                    break;
-                case 3:
-                    tipo = new Nitro(nombre, rareza, plataforma);
-                    break;
-                case 4:
-                    tipo = new Antena(nombre, rareza, plataforma);
-                    break;
-                case 5:
-                    tipo = new Sombrero(nombre, rareza, plataforma);
-                    break;
+
+                switch (optionTipo = showTipo()) {
+                    case 1:
+                        tipo = new Chasis(nombre, rareza, plataforma);
+                        break;
+                    case 2:
+                        tipo = new Rueda(nombre, rareza, plataforma);
+                        break;
+                    case 3:
+                        tipo = new Nitro(nombre, rareza, plataforma);
+                        break;
+                    case 4:
+                        tipo = new Antena(nombre, rareza, plataforma);
+                        break;
+                    case 5:
+                        tipo = new Sombrero(nombre, rareza, plataforma);
+                        break;
+                    }
+
+                }catch (InputMismatchException e){
+                    System.out.println("Tipo incorrecto. Vuelva a introducir el tipo por favor.");
+
                 }
 
             }while (optionTipo > 5 || optionTipo < 1 );
 
-        }catch (InputMismatchException e){
-            System.out.println("Introduzca el Tipo correcto por favor");
-            askItemInfo();
-        }
 
        return tipo;
         }
