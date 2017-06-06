@@ -131,6 +131,11 @@ public class RocketLeagueApp {
                     guardarItems();
                     break;
 
+//                case 12:
+//                    upgradeItem();
+//
+//                    break;
+
                  }
              }
         }catch (InputMismatchException e){
@@ -340,6 +345,7 @@ public class RocketLeagueApp {
         System.out.println("* 9 - Ordenacion por Rareza        *");
         System.out.println("* 10 - Ordenacion por Plataforma   *");
         System.out.println("* 11 - Guardar Cambios             *");
+//        System.out.println("* 12 - Actualizar Item             *");
         System.out.println("* 0 - Salir                        *");
         System.out.println("************************************");
         System.out.println("Opción: ");
@@ -567,6 +573,10 @@ public class RocketLeagueApp {
         }
     }
 
+
+    /**
+     * Funcion para ordenar los Chasis por nombre
+     */
     private void ordenarPorNombreChasis(){
         Collections.sort(chasisArrayList, Chasis.comparadorPorNombreChasis);
         int index = 0;
@@ -576,6 +586,9 @@ public class RocketLeagueApp {
         }
     }
 
+    /**
+     * Funcion para ordenar los Chasis por Rareza
+     */
     private void ordenarPorRarezaChasis(){
         Collections.sort(chasisArrayList, Chasis.comparadorPorRarezaChasis);
         int index = 0;
@@ -585,6 +598,9 @@ public class RocketLeagueApp {
         }
     }
 
+    /**
+     * Funcion para ordenar los Chasis por plataforma
+     */
     private void ordenarPorPlataformaChasis(){
         Collections.sort(chasisArrayList, Chasis.comparadorPorPlataformaChasis);
         int index = 0;
@@ -702,26 +718,112 @@ public class RocketLeagueApp {
         }
     }
 
-    public void modifyChasis(String nombre, Rareza rareza, Plataforma plataforma, int index) {
-        chasisArrayList.get(index).setNombre(nombre);
-        chasisArrayList.get(index).setRareza(rareza);
-        chasisArrayList.get(index).setPlataforma(plataforma);
-    }
+//    public void modifyChasis(String nombre, Rareza rareza, Plataforma plataforma, int index) {
+//        chasisArrayList.get(index).setNombre(nombre);
+//        chasisArrayList.get(index).setRareza(rareza);
+//        chasisArrayList.get(index).setPlataforma(plataforma);
+//    }
 
-//    public void upgradeIndex() {
+//    public void upgradeItem() {
 //        Scanner input = new Scanner(System.in);
 //        String nombre = "";
 //        Rareza rareza = Rareza.COMUN;
 //        Plataforma plataforma = Plataforma.TODAS;
-//
-//        Item tipo = askItemInfo();
-//
-//        int index = 0;
-//
-//        index = input.nextInt();
+//        Item item;
+//        Chasis chasis = null;
+//        int index;
 //
 //
-//       tipo = modifyWeapon(nombre,rareza,plataforma,index);
+//        try {
+//
+//            switch (showTipo()) {
+//
+//                case 1:
+//                    showChasisList();
+//
+//                    do {
+//
+//
+//                        System.out.println("Introducir el indice: ");
+//
+//                        index = input.nextInt();
+//
+//                    } while (!correctIndexChasis(index));
+//
+//                    item = askItemInfo();
+//                    items.set(index, item);
+//                    addItem(item);
+//
+
+//
+//                    break;
+//
+//                case 2:
+//                    showWhellsList();
+//                    do {
+//
+//                        System.out.println("Introducir el indice: ");
+//
+//                        index = input.nextInt();
+//
+//                    } while (!correctIndexRueda(index));
+//
+//                    item = (ArrayList<Item>) (ArrayList<?>) ruedas;
+//                    item.remove(index);
+//
+//                    break;
+//
+//                case 3:
+//
+//                    showBoostList();
+//                    do {
+//
+//                        System.out.println("Introducir el indice: ");
+//
+//                        index = input.nextInt();
+//
+//                    } while (!correctIndexNitro(index));
+//
+//                    item = (ArrayList<Item>) (ArrayList<?>) nitros;
+//
+//                    break;
+//
+//                case 4:
+//                    showAntenaList();
+//                    do {
+//
+//                        System.out.println("Introducir el indice: ");
+//
+//                        index = input.nextInt();
+//
+//                    } while (!correctIndexAntena(index));
+//
+//
+//                    item = (ArrayList<Item>) (ArrayList<?>) antenas;
+//
+//                    break;
+//
+//                case 5:
+//                    showHatList();
+//
+//                    do {
+//
+//                        System.out.println("Introducir el indice: ");
+//
+//                        index = input.nextInt();
+//
+//                    } while (!correctIndexSombrero(index));
+//
+//                    item = (ArrayList<Item>) (ArrayList<?>) sombreros;
+//
+//                    break;
+//
+//            }
+//
+//        }catch (InputMismatchException e){
+//            System.out.println("Introduzca el indice correcto por favor");
+//            upgradeItem();
+//        }
 //    }
 
     /**
@@ -825,7 +927,12 @@ public class RocketLeagueApp {
         }
     }
 
-
+    /**
+     * Funcion que al pasarle el parametro index nos devuelve un true o false dependiendo
+     * de si es mayor que 0 y menos que el tamaño del array
+     * @param index
+     * @return
+     */
     public boolean correctIndexChasis (int index){
 
         if(index >=0  && index < chasisArrayList.size() ){
